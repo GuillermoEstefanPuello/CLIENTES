@@ -117,6 +117,8 @@
     padding:13px 24px;
     border-radius:2px;
   }
+  .hero-meta a{color:#7F94A6;transition:color .15s ease;}
+  .hero-meta a:hover{color:var(--signal);}
   .hero-meta{
     font-family:'JetBrains Mono',monospace;
     font-size:12px;
@@ -219,6 +221,15 @@
     padding:5px 9px;
     color:var(--ink-soft);
   }
+  .demo-link{
+    display:inline-block;
+    margin-top:20px;
+    font-size:13.5px;
+    font-weight:600;
+    color:var(--teal);
+    border-bottom:1px solid var(--teal);
+    padding-bottom:2px;
+  }
   .flagship-stats{
     background:var(--ink);
     color:var(--white);
@@ -257,6 +268,14 @@
     color:var(--line-strong);
     text-transform:uppercase;
     letter-spacing:0.05em;
+  }
+  .card-link{
+    display:inline-block;
+    margin-top:10px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:11.5px;
+    font-weight:600;
+    color:var(--teal);
   }
 
   /* ---------- CASE STUDY ---------- */
@@ -309,6 +328,23 @@
   .contact-grid{display:flex;flex-wrap:wrap;gap:40px;margin-top:46px;border-top:1px solid rgba(250,251,252,0.14);padding-top:28px;}
   .contact-item .k{font-family:'JetBrains Mono',monospace;font-size:11px;color:#7F94A6;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;}
   .contact-item .v{font-size:15px;font-weight:500;}
+  .contact-item .v a{color:var(--white);border-bottom:1px solid rgba(250,251,252,0.3);}
+  .contact-item .v a:hover{border-color:var(--signal);color:var(--signal);}
+
+  .social-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:22px;
+    margin-top:24px;
+  }
+  .social-row a{
+    font-family:'JetBrains Mono',monospace;
+    font-size:12.5px;
+    color:#9FB1C0;
+    letter-spacing:0.03em;
+    transition:color .15s ease;
+  }
+  .social-row a:hover{color:var(--signal);}
 
   footer{
     background:var(--ink);
@@ -357,13 +393,13 @@
     <h1>El software de tu empresa,<br>construido con <em>método</em>, no con suerte.</h1>
     <p class="lede">Diseñamos y desarrollamos productos digitales completos —de la arquitectura al despliegue— bajo DEVGEP+, una metodología propia que ya sostiene una plataforma SaaS en producción con más de 30 módulos.</p>
     <div class="hero-cta">
-      <a href="#contacto" class="btn-primary">Hablemos de tu proyecto</a>
+      <a href="https://wa.me/message/APPGSFUH7V3GF1" target="_blank" rel="noopener" class="btn-primary">Hablemos de tu proyecto</a>
       <a href="#portafolio" class="btn-ghost">Ver portafolio →</a>
     </div>
     <div class="hero-meta">
       <span>RNC 133-366-525</span>
-      <span>corp-starbound.com</span>
-      <span>@starbound_rd</span>
+      <a href="https://corp-starbound.com" target="_blank" rel="noopener">corp-starbound.com</a>
+      <a href="https://www.instagram.com/starbound_rd?igsh=M2d2NnJhMWJ2b2hj&utm_source=qr" target="_blank" rel="noopener">@starbound_rd</a>
     </div>
   </div>
 </header>
@@ -422,6 +458,7 @@
         <div class="stack-tags">
           <span>Next.js 14</span><span>NestJS</span><span>PostgreSQL</span><span>Prisma</span><span>Redis</span><span>BullMQ</span><span>Vercel</span><span>Render</span>
         </div>
+        <a href="https://shepherdbi-web.vercel.app/" target="_blank" rel="noopener" class="demo-link">Ver demo en vivo →</a>
       </div>
       <div class="flagship-stats">
         <div><div class="fnum">33+</div><div class="flabel">módulos en producción</div></div>
@@ -447,6 +484,7 @@
         <span class="seg">SaaS · Iglesias</span>
         <h4>Shepherd-BI</h4>
         <p>Plataforma de inteligencia y gestión pastoral para iglesias hispanas, con 33+ módulos en producción.</p>
+        <a href="https://shepherdbi-web.vercel.app/" target="_blank" rel="noopener" class="card-link">Ver en vivo →</a>
       </div>
       <div class="pf-card">
         <span class="crop tl"></span><span class="crop br"></span>
@@ -515,16 +553,23 @@
     <div class="contact-grid">
       <div class="contact-item"><div class="k">Email</div><div class="v">info@corp-starbound.com</div></div>
       <div class="contact-item"><div class="k">Email (opcional)</div><div class="v">guillermo.e.puello@gmail.com</div></div>
-      <div class="contact-item"><div class="k">Sitio</div><div class="v">corp-starbound.com</div></div>
-      <div class="contact-item"><div class="k">Instagram</div><div class="v">@starbound_rd</div></div>
+      <div class="contact-item"><div class="k">Sitio</div><div class="v"><a href="https://corp-starbound.com" target="_blank" rel="noopener">corp-starbound.com</a></div></div>
       <div class="contact-item"><div class="k">RNC</div><div class="v">133-366-525</div></div>
+    </div>
+    <div class="social-row">
+      <a href="https://www.instagram.com/starbound_rd?igsh=M2d2NnJhMWJ2b2hj&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
+      <a href="https://facebook.com/share/1ApAhGDnEi/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://linkedin.com/company/80786313" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://x.com/starbound_do?s=21" target="_blank" rel="noopener">X</a>
+      <a href="https://tiktok.com/@starbound_rd" target="_blank" rel="noopener">TikTok</a>
+      <a href="https://wa.me/message/APPGSFUH7V3GF1" target="_blank" rel="noopener">WhatsApp</a>
     </div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
-    <span>© 2026 StarBound — Software House</span>
+    <span>© 2026 StarBound — Software House · <a href="https://corp-starbound.com" target="_blank" rel="noopener" style="color:inherit">corp-starbound.com</a></span>
     <span>DEVGEP+ © método propio de desarrollo</span>
   </div>
 </footer>
