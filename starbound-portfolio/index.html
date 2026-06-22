@@ -3,580 +3,192 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>StarBound — Portafolio &amp; Servicios</title>
+<title>StarBound — Software House RD · Desarrollo, IA, BI & DevOps</title>
+<meta name="description" content="StarBound construye software a medida, SaaS, plataformas empresariales, automatización, IA, Business Intelligence y DevOps bajo la metodología DEVGEP+.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root{
-    --ink:#0E1C2E;
-    --ink-soft:#23344A;
-    --paper:#EEF2F6;
-    --paper-deep:#E3E9EF;
-    --line:#A9BCCB;
-    --line-strong:#5C7B95;
-    --signal:#F2A93B;
-    --signal-deep:#C97F1B;
-    --teal:#1B7A6B;
-    --white:#FAFBFC;
-    --maxw:1080px;
+    --ink:#0E1C2E; --ink-soft:#23344A; --paper:#EEF2F6; --paper-deep:#E3E9EF;
+    --line:#A9BCCB; --line-strong:#5C7B95; --signal:#F2A93B; --signal-deep:#C97F1B;
+    --teal:#1B7A6B; --white:#FAFBFC; --maxw:1120px;
   }
   *{margin:0;padding:0;box-sizing:border-box;}
   html{scroll-behavior:smooth;}
-  body{
-    background:var(--paper);
-    color:var(--ink);
-    font-family:'Inter',sans-serif;
-    font-size:16px;
-    line-height:1.55;
-    -webkit-font-smoothing:antialiased;
-  }
-  .mono{font-family:'JetBrains Mono',monospace;}
-  h1,h2,h3{font-family:'Space Grotesk',sans-serif;letter-spacing:-0.01em;}
-  a{color:inherit;text-decoration:none;}
-  img,svg{display:block;max-width:100%;}
-
+  body{background:var(--paper);color:var(--ink);font-family:'Inter',sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;}
+  h1,h2,h3,h4{font-family:'Space Grotesk',sans-serif;letter-spacing:-0.015em;}
+  a{color:inherit;text-decoration:none;} img,svg{display:block;max-width:100%;}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 32px;}
-
-  .eyebrow{
-    font-family:'JetBrains Mono',monospace;
-    font-size:12px;
-    letter-spacing:0.12em;
-    text-transform:uppercase;
-    color:var(--signal-deep);
-    display:flex;
-    align-items:center;
-    gap:10px;
-    margin-bottom:18px;
-  }
-  .eyebrow::before{
-    content:'';
-    width:18px;height:1px;
-    background:var(--signal-deep);
-    display:inline-block;
-  }
-  section.on-dark .eyebrow{color:var(--signal);}
-  section.on-dark .eyebrow::before{background:var(--signal);}
-
-  /* ---------- HERO ---------- */
-  .hero{
-    position:relative;
-    background:var(--ink);
-    color:var(--white);
-    overflow:hidden;
-    padding:96px 0 84px;
-  }
-  .hero-grid-bg{
-    position:absolute;inset:0;
-    opacity:0.5;
-    pointer-events:none;
-  }
-  .frame-corners span{
-    position:absolute;
-    width:22px;height:22px;
-    border:1.5px solid rgba(250,251,252,0.45);
-  }
-  .frame-corners .tl{top:28px;left:28px;border-right:none;border-bottom:none;}
-  .frame-corners .tr{top:28px;right:28px;border-left:none;border-bottom:none;}
-  .frame-corners .bl{bottom:28px;left:28px;border-right:none;border-top:none;}
-  .frame-corners .br{bottom:28px;right:28px;border-left:none;border-top:none;}
-
-  .hero-inner{position:relative;z-index:2;}
-  .hero-logo{height:44px;margin-bottom:28px;}
-  .hero-logo{height:44px;margin-bottom:28px;}
-  .hero-logo{height:44px;margin-bottom:28px;}
-  .hero h1{
-    font-size:clamp(34px,5vw,54px);
-    font-weight:600;
-    line-height:1.12;
-    max-width:760px;
-    margin-bottom:22px;
-  }
-  .hero h1 em{
-    font-style:normal;
-    color:var(--signal);
-  }
-  .hero .lede{
-    font-size:18px;
-    color:#C6D2DD;
-    max-width:560px;
-    margin-bottom:38px;
-  }
-  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:46px;}
-  .btn-primary{
-    background:var(--signal);
-    color:var(--ink);
-    font-weight:600;
-    font-size:14px;
-    padding:13px 24px;
-    border-radius:2px;
-    transition:transform .15s ease;
-  }
-  .btn-primary:hover{transform:translateY(-2px);}
-  .btn-ghost{
-    border:1px solid rgba(250,251,252,0.35);
-    color:var(--white);
-    font-weight:500;
-    font-size:14px;
-    padding:13px 24px;
-    border-radius:2px;
-  }
-  .hero-meta a{color:#7F94A6;transition:color .15s ease;}
-  .hero-meta a:hover{color:var(--signal);}
-  .hero-meta{
-    font-family:'JetBrains Mono',monospace;
-    font-size:12px;
-    color:#7F94A6;
-    letter-spacing:0.04em;
-    display:flex;gap:18px;flex-wrap:wrap;
-    border-top:1px solid rgba(250,251,252,0.14);
-    padding-top:18px;
-  }
-
-  /* ---------- SECTION GENERIC ---------- */
-  section{padding:88px 0;position:relative;}
-  section.on-dark{background:var(--ink);color:var(--white);}
-  .hr{
-    border-top:1px solid var(--line);
-  }
-  .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:48px;flex-wrap:wrap;}
-  .section-head h2{font-size:30px;font-weight:600;max-width:560px;}
-  .section-head .note{font-size:13px;color:var(--ink-soft);max-width:280px;font-family:'JetBrains Mono',monospace;line-height:1.5;}
+  .mono{font-family:'JetBrains Mono',monospace;}
+  .eyebrow{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--signal-deep);display:flex;align-items:center;gap:10px;margin-bottom:18px;}
+  .eyebrow::before{content:'';width:18px;height:1px;background:var(--signal-deep);display:inline-block;}
+  section.on-dark .eyebrow,.hero .eyebrow{color:var(--signal);} section.on-dark .eyebrow::before,.hero .eyebrow::before{background:var(--signal);}
+  section{padding:88px 0;position:relative;} section.on-dark{background:var(--ink);color:var(--white);}
+  .section-head{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-bottom:46px;flex-wrap:wrap;}
+  .section-head h2{font-size:clamp(28px,3.5vw,40px);font-weight:600;max-width:670px;line-height:1.12;}
+  .section-head .note{font-size:13px;color:var(--ink-soft);max-width:330px;font-family:'JetBrains Mono',monospace;line-height:1.5;}
   section.on-dark .section-head .note{color:#9FB1C0;}
 
-  /* ---------- QUIENES SOMOS ---------- */
-  .about-grid{display:grid;grid-template-columns:1.3fr 1fr;gap:56px;align-items:start;}
-  .about-grid p{margin-bottom:16px;max-width:520px;color:var(--ink-soft);}
-  .stat-block{display:grid;grid-template-columns:1fr 1fr;gap:22px;}
-  .stat{
-    border:1px solid var(--line);
-    border-top:3px solid var(--signal-deep);
-    padding:18px 16px;
-    background:var(--white);
-  }
-  .stat .num{font-family:'JetBrains Mono',monospace;font-size:28px;font-weight:600;color:var(--ink);}
-  .stat .label{font-size:12px;color:var(--ink-soft);margin-top:4px;}
+  .hero{position:relative;background:radial-gradient(circle at 70% 0%,rgba(27,122,107,.25),transparent 34%),var(--ink);color:var(--white);overflow:hidden;padding:96px 0 84px;}
+  .hero-grid-bg{position:absolute;inset:0;opacity:.45;pointer-events:none;}
+  .frame-corners span{position:absolute;width:22px;height:22px;border:1.5px solid rgba(250,251,252,.45);}
+  .frame-corners .tl{top:28px;left:28px;border-right:none;border-bottom:none;} .frame-corners .tr{top:28px;right:28px;border-left:none;border-bottom:none;}
+  .frame-corners .bl{bottom:28px;left:28px;border-right:none;border-top:none;} .frame-corners .br{bottom:28px;right:28px;border-left:none;border-top:none;}
+  .hero-inner{position:relative;z-index:2;} .hero-logo{height:44px;margin-bottom:28px;}
+  .hero h1{font-size:clamp(38px,6vw,66px);font-weight:650;line-height:1.04;max-width:880px;margin-bottom:24px;}
+  .hero h1 em{font-style:normal;color:var(--signal);} .hero .lede{font-size:18px;color:#C6D2DD;max-width:720px;margin-bottom:34px;}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px;}.btn-primary{background:var(--signal);color:var(--ink);font-weight:700;font-size:14px;padding:13px 24px;border-radius:2px;transition:transform .15s ease,filter .15s ease;display:inline-block;}
+  .btn-primary:hover{transform:translateY(-2px);filter:brightness(1.04);} .btn-ghost{border:1px solid rgba(250,251,252,.35);color:var(--white);font-weight:600;font-size:14px;padding:13px 24px;border-radius:2px;display:inline-block;}
+  .hero-badges{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:42px;}.hero-badges span{font-family:'JetBrains Mono',monospace;font-size:11px;color:#C6D2DD;border:1px solid rgba(250,251,252,.18);background:rgba(250,251,252,.04);padding:7px 10px;}
+  .hero-meta{font-family:'JetBrains Mono',monospace;font-size:12px;color:#7F94A6;letter-spacing:.04em;display:flex;gap:18px;flex-wrap:wrap;border-top:1px solid rgba(250,251,252,.14);padding-top:18px;}
+  .hero-meta a{color:#7F94A6;transition:color .15s ease;}.hero-meta a:hover{color:var(--signal);}
 
-  /* ---------- METHOD / SCHEMATIC ---------- */
-  .method-wrap{display:grid;grid-template-columns:1fr;gap:36px;}
-  .method-intro{max-width:640px;color:#C6D2DD;}
-  .schema{
-    border:1px solid rgba(250,251,252,0.2);
-    padding:38px 20px 28px;
-    position:relative;
-  }
-  .schema-row{
-    display:flex;
-    justify-content:space-between;
-    align-items:flex-start;
-    gap:8px;
-    position:relative;
-  }
-  .schema-row::before{
-    content:'';
-    position:absolute;
-    top:17px;left:5%;right:5%;
-    height:1px;
-    background:repeating-linear-gradient(to right, rgba(242,169,59,0.6) 0 6px, transparent 6px 12px);
-  }
-  .node{
-    flex:1;
-    text-align:center;
-    position:relative;
-    z-index:2;
-  }
-  .node .dot{
-    width:11px;height:11px;
-    border:2px solid var(--signal);
-    background:var(--ink);
-    border-radius:50%;
-    margin:0 auto 14px;
-  }
-  .node .name{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:0.04em;color:var(--white);text-transform:uppercase;margin-bottom:6px;}
-  .node .desc{font-size:12.5px;color:#92A6B6;line-height:1.5;padding:0 6px;}
+  .services-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
+  .service-card{background:var(--white);padding:30px 24px;min-height:240px;position:relative;display:flex;flex-direction:column;}
+  .service-card .num{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--signal-deep);margin-bottom:18px;}.service-card h3{font-size:20px;margin-bottom:12px;}
+  .service-card p{font-size:14px;color:var(--ink-soft);margin-bottom:18px;}.service-card ul{list-style:none;margin-top:auto;}.service-card li{font-size:12.5px;color:var(--ink-soft);margin-top:7px;font-family:'JetBrains Mono',monospace;}
+  .service-card li::before{content:'→ ';color:var(--teal);font-weight:700;}
 
-  /* ---------- FLAGSHIP (Shepherd-BI) ---------- */
-  .flagship{
-    background:var(--white);
-    border:1px solid var(--line);
-    padding:0;
-    display:grid;
-    grid-template-columns:1.1fr 1fr;
-  }
-  .flagship-copy{padding:44px 44px;}
-  .flagship-copy .tag{
-    display:inline-block;
-    font-family:'JetBrains Mono',monospace;
-    font-size:11px;
-    letter-spacing:0.08em;
-    color:var(--teal);
-    border:1px solid var(--teal);
-    padding:4px 10px;
-    margin-bottom:18px;
-  }
-  .flagship-copy h3{font-size:26px;margin-bottom:14px;}
-  .flagship-copy p{color:var(--ink-soft);margin-bottom:18px;max-width:460px;}
-  .stack-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;}
-  .stack-tags span{
-    font-family:'JetBrains Mono',monospace;
-    font-size:11px;
-    background:var(--paper-deep);
-    border:1px solid var(--line);
-    padding:5px 9px;
-    color:var(--ink-soft);
-  }
-  .demo-link{
-    display:inline-block;
-    margin-top:20px;
-    font-size:13.5px;
-    font-weight:600;
-    color:var(--teal);
-    border-bottom:1px solid var(--teal);
-    padding-bottom:2px;
-  }
-  .flagship-stats{
-    background:var(--ink);
-    color:var(--white);
-    padding:44px 36px;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    gap:26px;
-  }
-  .flagship-stats .fnum{font-family:'JetBrains Mono',monospace;font-size:34px;color:var(--signal);font-weight:600;}
-  .flagship-stats .flabel{font-size:13px;color:#AEBECC;margin-top:2px;}
+  .about-grid{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:start;}.about-grid p{margin-bottom:16px;max-width:560px;color:var(--ink-soft);}
+  .stat-block{display:grid;grid-template-columns:1fr 1fr;gap:22px;}.stat{border:1px solid var(--line);border-top:3px solid var(--signal-deep);padding:18px 16px;background:var(--white);}
+  .stat .num{font-family:'JetBrains Mono',monospace;font-size:30px;font-weight:700;color:var(--ink);}.stat .label{font-size:12px;color:var(--ink-soft);margin-top:4px;}
 
-  /* ---------- PORTFOLIO GRID ---------- */
-  .pf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}
-  .pf-card{
-    background:var(--white);
-    padding:30px 26px;
-    position:relative;
-    min-height:190px;
-    display:flex;flex-direction:column;
-  }
-  .pf-card .crop{position:absolute;width:10px;height:10px;border:1.4px solid var(--line-strong);}
-  .pf-card .crop.tl{top:10px;left:10px;border-right:none;border-bottom:none;}
-  .pf-card .crop.br{bottom:10px;right:10px;border-left:none;border-top:none;}
-  .pf-card .flag{
-    position:absolute;top:14px;right:14px;
-    font-family:'JetBrains Mono',monospace;
-    font-size:10px;color:var(--signal-deep);
-    letter-spacing:0.05em;
-  }
-  .pf-card h4{font-size:18px;margin:10px 0 10px;}
-  .pf-card p{font-size:13.5px;color:var(--ink-soft);flex:1;}
-  .pf-card .seg{
-    font-family:'JetBrains Mono',monospace;
-    font-size:11px;
-    color:var(--line-strong);
-    text-transform:uppercase;
-    letter-spacing:0.05em;
-  }
-  .card-link{
-    display:inline-block;
-    margin-top:10px;
-    font-family:'JetBrains Mono',monospace;
-    font-size:11.5px;
-    font-weight:600;
-    color:var(--teal);
-  }
+  .method-wrap{display:grid;grid-template-columns:1fr;gap:36px;}.method-intro{max-width:720px;color:#C6D2DD;}.schema{border:1px solid rgba(250,251,252,.2);padding:38px 20px 28px;position:relative;}
+  .schema-row{display:flex;justify-content:space-between;align-items:flex-start;gap:8px;position:relative;}.schema-row::before{content:'';position:absolute;top:17px;left:5%;right:5%;height:1px;background:repeating-linear-gradient(to right,rgba(242,169,59,.6) 0 6px,transparent 6px 12px);}
+  .node{flex:1;text-align:center;position:relative;z-index:2;}.node .dot{width:11px;height:11px;border:2px solid var(--signal);background:var(--ink);border-radius:50%;margin:0 auto 14px;}
+  .node .name{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.04em;color:var(--white);text-transform:uppercase;margin-bottom:6px;}.node .desc{font-size:12.5px;color:#92A6B6;line-height:1.5;padding:0 6px;}
 
-  /* ---------- CASE STUDY ---------- */
-  .case{
-    display:grid;
-    grid-template-columns:1fr 1fr;
-    gap:48px;
-    align-items:center;
-  }
-  .case-copy p{color:var(--ink-soft);margin-bottom:16px;max-width:480px;}
-  .case-list{list-style:none;margin-top:22px;}
-  .case-list li{
-    display:flex;gap:12px;
-    font-size:14px;color:var(--ink);
-    margin-bottom:12px;
-    align-items:flex-start;
-  }
-  .case-list li::before{
-    content:'';
-    width:7px;height:7px;
-    background:var(--signal-deep);
-    margin-top:6px;
-    flex-shrink:0;
-  }
-  .case-panel{
-    background:var(--ink);
-    color:var(--white);
-    padding:40px 32px;
-    border-top:3px solid var(--signal);
-  }
-  .case-panel .role{
-    display:flex;justify-content:space-between;
-    font-family:'JetBrains Mono',monospace;
-    font-size:12.5px;
-    padding:12px 0;
-    border-bottom:1px solid rgba(250,251,252,0.12);
-  }
-  .case-panel .role:last-child{border-bottom:none;}
-  .case-panel .role span:last-child{color:#92A6B6;}
+  .flagship{background:var(--white);border:1px solid var(--line);display:grid;grid-template-columns:1.1fr 1fr;}.flagship-copy{padding:44px;}.tag{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.08em;color:var(--teal);border:1px solid var(--teal);padding:4px 10px;margin-bottom:18px;text-transform:uppercase;}
+  .flagship-copy h3{font-size:28px;margin-bottom:14px;}.flagship-copy p{color:var(--ink-soft);margin-bottom:18px;max-width:520px;}.stack-tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px;}.stack-tags span{font-family:'JetBrains Mono',monospace;font-size:11px;background:var(--paper-deep);border:1px solid var(--line);padding:5px 9px;color:var(--ink-soft);}
+  .demo-link{display:inline-block;margin-top:20px;font-size:13.5px;font-weight:700;color:var(--teal);border-bottom:1px solid var(--teal);padding-bottom:2px;}.flagship-stats{background:var(--ink);color:var(--white);padding:44px 36px;display:grid;grid-template-columns:1fr 1fr;gap:26px;align-content:center;}
+  .flagship-stats .fnum{font-family:'JetBrains Mono',monospace;font-size:34px;color:var(--signal);font-weight:700;}.flagship-stats .flabel{font-size:13px;color:#AEBECC;margin-top:2px;}
 
-  /* ---------- CONTACT ---------- */
-  .contact{
-    background:var(--ink);
-    color:var(--white);
-    padding:96px 0;
-    text-align:left;
-  }
-  .contact h2{font-size:clamp(30px,4vw,44px);max-width:640px;margin-bottom:20px;}
-  .contact p.lede{color:#C6D2DD;max-width:520px;margin-bottom:36px;font-size:17px;}
-  .contact-grid{display:flex;flex-wrap:wrap;gap:40px;margin-top:46px;border-top:1px solid rgba(250,251,252,0.14);padding-top:28px;}
-  .contact-item .k{font-family:'JetBrains Mono',monospace;font-size:11px;color:#7F94A6;text-transform:uppercase;letter-spacing:0.08em;margin-bottom:6px;}
-  .contact-item .v{font-size:15px;font-weight:500;}
-  .contact-item .v a{color:var(--white);border-bottom:1px solid rgba(250,251,252,0.3);}
-  .contact-item .v a:hover{border-color:var(--signal);color:var(--signal);}
+  .pf-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line);}.pf-card{background:var(--white);padding:30px 26px;position:relative;min-height:230px;display:flex;flex-direction:column;}
+  .pf-card .flag{position:absolute;top:14px;right:14px;font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--signal-deep);letter-spacing:.05em;}.pf-card h4{font-size:19px;margin:10px 0;}.pf-card p{font-size:13.5px;color:var(--ink-soft);flex:1;}.pf-card .seg{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--line-strong);text-transform:uppercase;letter-spacing:.05em;}
+  .pf-card .mini{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--teal);margin-top:14px;}.card-link{display:inline-block;margin-top:10px;font-family:'JetBrains Mono',monospace;font-size:11.5px;font-weight:700;color:var(--teal);}
 
-  .social-row{
-    display:flex;
-    flex-wrap:wrap;
-    gap:22px;
-    margin-top:24px;
-  }
-  .social-row a{
-    font-family:'JetBrains Mono',monospace;
-    font-size:12.5px;
-    color:#9FB1C0;
-    letter-spacing:0.03em;
-    transition:color .15s ease;
-  }
-  .social-row a:hover{color:var(--signal);}
+  .case{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;align-items:center;}.case-copy p{color:var(--ink-soft);margin-bottom:16px;max-width:520px;}.case-list{list-style:none;margin-top:22px;}.case-list li{display:flex;gap:12px;font-size:14px;color:var(--ink);margin-bottom:12px;align-items:flex-start;}.case-list li::before{content:'';width:7px;height:7px;background:var(--signal-deep);margin-top:7px;flex-shrink:0;}
+  .case-panel{background:var(--ink);color:var(--white);padding:40px 32px;border-top:3px solid var(--signal);}.case-panel .role{display:flex;justify-content:space-between;gap:24px;font-family:'JetBrains Mono',monospace;font-size:12.5px;padding:12px 0;border-bottom:1px solid rgba(250,251,252,.12);}.case-panel .role:last-child{border-bottom:none;}.case-panel .role span:last-child{color:#92A6B6;text-align:right;}
 
-  footer{
-    background:var(--ink);
-    color:#7F94A6;
-    font-family:'JetBrains Mono',monospace;
-    font-size:11.5px;
-    padding:22px 0 36px;
-    border-top:1px solid rgba(250,251,252,0.1);
-  }
-  footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
+  .leadership-card{display:grid;grid-template-columns:1fr 1.2fr;gap:1px;background:var(--line);border:1px solid var(--line);}.leader-left,.leader-right{background:var(--white);padding:34px;}.leader-left h3{font-size:26px;margin-bottom:10px;}.leader-left p,.leader-right p{color:var(--ink-soft);}.leader-pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;}.leader-pills span{font-family:'JetBrains Mono',monospace;font-size:11px;background:var(--paper-deep);border:1px solid var(--line);padding:6px 9px;color:var(--ink-soft);}
 
-  @media (max-width:860px){
-    .about-grid,.case,.flagship{grid-template-columns:1fr;}
-    .pf-grid{grid-template-columns:1fr 1fr;}
-    .schema-row{flex-direction:column;gap:24px;}
-    .schema-row::before{display:none;}
-  }
-  @media (max-width:560px){
-    .pf-grid{grid-template-columns:1fr;}
-    .wrap{padding:0 20px;}
-    .hero{padding:72px 0 56px;}
-  }
+  .contact{background:var(--ink);color:var(--white);padding:96px 0;text-align:left;}.contact h2{font-size:clamp(30px,4vw,46px);max-width:760px;margin-bottom:20px;}.contact p.lede{color:#C6D2DD;max-width:620px;margin-bottom:36px;font-size:17px;}.contact-grid{display:flex;flex-wrap:wrap;gap:40px;margin-top:46px;border-top:1px solid rgba(250,251,252,.14);padding-top:28px;}.contact-item .k{font-family:'JetBrains Mono',monospace;font-size:11px;color:#7F94A6;text-transform:uppercase;letter-spacing:.08em;margin-bottom:6px;}.contact-item .v{font-size:15px;font-weight:500;}.contact-item .v a{color:var(--white);border-bottom:1px solid rgba(250,251,252,.3);}.contact-item .v a:hover{border-color:var(--signal);color:var(--signal);}
+  .social-row{display:flex;flex-wrap:wrap;gap:22px;margin-top:24px;}.social-row a{font-family:'JetBrains Mono',monospace;font-size:12.5px;color:#9FB1C0;letter-spacing:.03em;transition:color .15s ease;}.social-row a:hover{color:var(--signal);}
+  footer{background:var(--ink);color:#7F94A6;font-family:'JetBrains Mono',monospace;font-size:11.5px;padding:22px 0 36px;border-top:1px solid rgba(250,251,252,.1);} footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;}
 
-  @media print{
-    body{background:#fff;}
-    .hero,.method,.contact,section.on-dark{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
-    section{page-break-inside:avoid;padding:48px 0;}
-    .pf-grid{page-break-inside:avoid;}
-  }
+  @media (max-width:960px){.services-grid{grid-template-columns:1fr 1fr;}.about-grid,.case,.flagship,.leadership-card{grid-template-columns:1fr;}.pf-grid{grid-template-columns:1fr 1fr;}.schema-row{flex-direction:column;gap:24px;}.schema-row::before{display:none;}.node{text-align:left;display:grid;grid-template-columns:22px 1fr;column-gap:12px;}.node .dot{margin:4px 0 0;grid-row:1/3}.node .desc{padding:0;}}
+  @media (max-width:560px){.services-grid,.pf-grid,.flagship-stats{grid-template-columns:1fr;}.wrap{padding:0 20px;}.hero{padding:72px 0 56px;}.hero-logo{height:38px;}.service-card{min-height:auto;}}
+  @media print{body{background:#fff;}.hero,.contact,section.on-dark{-webkit-print-color-adjust:exact;print-color-adjust:exact;}section{page-break-inside:avoid;padding:48px 0;}.pf-grid{page-break-inside:avoid;}}
 </style>
 </head>
 <body>
-
 <header class="hero">
   <div class="frame-corners"><span class="tl"></span><span class="tr"></span><span class="bl"></span><span class="br"></span></div>
-  <svg class="hero-grid-bg" width="100%" height="100%" viewBox="0 0 1200 600" preserveAspectRatio="none">
-    <defs>
-      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-        <path d="M40 0H0V40" fill="none" stroke="#1E3349" stroke-width="1"/>
-      </pattern>
-    </defs>
-    <rect width="1200" height="600" fill="url(#grid)"/>
-  </svg>
+  <svg class="hero-grid-bg" width="100%" height="100%" viewBox="0 0 1200 600" preserveAspectRatio="none"><defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0H0V40" fill="none" stroke="#1E3349" stroke-width="1"/></pattern></defs><rect width="1200" height="600" fill="url(#grid)"/></svg>
   <div class="wrap hero-inner">
     <img src="assets/logo.png" alt="StarBound" class="hero-logo">
-    <div class="eyebrow" style="color:var(--signal)">Software House · RD → LATAM</div>
-    <h1>Convertimos tu visión extraordinaria<br>en una <em>realidad digital</em>.</h1>
-    <p class="lede">Desde startups hasta instituciones gubernamentales, diseñamos y desarrollamos productos completos end-to-end, bajo metodologías ágiles y nuestra propia metodología: DEVGEP+, una metodología que ya sostiene una plataforma SaaS en producción con más de 30 módulos. Construido con estrategia metodológica, no con suerte.</p>
-    <div class="hero-cta">
-      <a href="https://wa.me/message/APPGSFUH7V3GF1" target="_blank" rel="noopener" class="btn-primary">Hablemos de tu proyecto</a>
-      <a href="#portafolio" class="btn-ghost">Ver portafolio →</a>
-    </div>
-    <div class="hero-meta">
-      <span>RNC 133-366-525</span>
-      <a href="https://corp-starbound.com" target="_blank" rel="noopener">corp-starbound.com</a>
-      <a href="https://www.instagram.com/starbound_rd?igsh=M2d2NnJhMWJ2b2hj&utm_source=qr" target="_blank" rel="noopener">@starbound_rd</a>
-    </div>
+    <div class="eyebrow">Software House · RD → LATAM → Worldwide</div>
+    <h1>Software a medida para empresas que quieren <em>crecer, automatizar y operar mejor</em>.</h1>
+    <p class="lede">Diseñamos, desarrollamos y desplegamos plataformas web, SaaS, sistemas internos, portales empresariales, automatizaciones, IA aplicada, Business Intelligence e integraciones. Todo bajo metodologías ágiles ampliamente conocidas y probadas por la industria, y por supuesto DEVGEP+, nuestra metodología propia que convierte ideas en productos estables, medibles y listos para producción.</p>
+    <div class="hero-cta"><a href="https://wa.me/message/APPGSFUH7V3GF1" target="_blank" rel="noopener" class="btn-primary">Agendar diagnóstico</a><a href="#servicios" class="btn-ghost">Ver servicios →</a><a href="#portafolio" class="btn-ghost">Ver portafolio →</a></div>
+    <div class="hero-badges"><span>Software a medida</span><span>SaaS</span><span>IA & Automatización</span><span>Business Intelligence</span><span>DevOps</span></div>
+    <div class="hero-meta"><span>RNC 133-366-525</span><a href="https://corp-starbound.com" target="_blank" rel="noopener">corp-starbound.com</a><a href="https://www.instagram.com/starbound_rd?igsh=M2d2NnJhMWJ2b2hj&utm_source=qr" target="_blank" rel="noopener">@starbound_rd</a></div>
   </div>
 </header>
+
+<section id="servicios">
+  <div class="wrap">
+    <div class="eyebrow">Servicios</div>
+    <div class="section-head"><h2>Lo que una empresa moderna necesita construir hoy.</h2><div class="note">Vendemos productos digitales completos, no páginas sueltas ni código sin dirección.</div></div>
+    <div class="services-grid">
+      <div class="service-card"><div class="num">01</div><h3>Software a medida</h3><p>Construimos sistemas internos, portales, CRM, ERP ligeros, marketplaces y plataformas operativas alineadas a procesos reales.</p><ul><li>Apps web empresariales</li><li>SaaS y portales</li><li>Integraciones API</li></ul></div>
+      <div class="service-card"><div class="num">02</div><h3>IA & Automatización</h3><p>Automatizamos tareas repetitivas y creamos asistentes, flujos y herramientas inteligentes que reducen carga operativa.</p><ul><li>Agentes IA</li><li>Workflows automáticos</li><li>Chatbots de negocio</li></ul></div>
+      <div class="service-card"><div class="num">03</div><h3>Data & BI</h3><p>Convertimos datos dispersos en tableros, KPIs, reportes ejecutivos y modelos de decisión para dirección y operaciones.</p><ul><li>Power BI</li><li>KPIs ejecutivos</li><li>Forecasting</li></ul></div>
+      <div class="service-card"><div class="num">04</div><h3>DevOps & Cloud</h3><p>Preparamos productos para producción con despliegues, repositorios, control de versiones, ambientes y monitoreo.</p><ul><li>Vercel / Render</li><li>Docker</li><li>CI/CD</li></ul></div>
+    </div>
+  </div>
+</section>
 
 <section id="quienes-somos">
   <div class="wrap">
     <div class="eyebrow">Quiénes somos</div>
     <div class="about-grid">
-      <div>
-        <p>StarBound es una compañía de software y tecnología de la información, con sede en República Dominicana, que diseña, construye y mantiene productos digitales completos para empresas locales, de LATAM, USA y el mundo.</p>
-        <p>Operamos con metodologías ágiles y un método propio documentado —DEVGEP+— que define cómo se planifica, construye y verifica cada proyecto, para que el software que entregamos sea estable y predecible, no un experimento.</p>
-        <p>Eso mismo es lo que sostiene a Shepherd-BI, nuestro producto insignia, y lo que aplicamos en cada proyecto para cliente.</p>
-      </div>
-      <div class="stat-block">
-        <div class="stat"><div class="num">70+</div><div class="label">sesiones de desarrollo documentadas</div></div>
-        <div class="stat"><div class="num">33+</div><div class="label">módulos construidos en producción</div></div>
-        <div class="stat"><div class="num">01</div><div class="label">metodología propia (DEVGEP+)</div></div>
-        <div class="stat"><div class="num">6</div><div class="label">productos en portafolio</div></div>
-      </div>
+      <div><p>StarBound es una casa de software dominicana que diseña, construye y mantiene productos digitales completos para empresas en República Dominicana, LATAM y mercados internacionales.</p><p>Trabajamos con metodología, documentación y visión de negocio. Antes de escribir código, definimos arquitectura, alcance, reglas, entregables y criterios de validación.</p><p>Nuestro enfoque combina ingeniería de software, inteligencia artificial, Business Intelligence y DevOps para entregar sistemas que no solo se ven bien: funcionan, escalan y generan control operativo.</p></div>
+      <div class="stat-block"><div class="stat"><div class="num">70+</div><div class="label">sesiones de desarrollo documentadas</div></div><div class="stat"><div class="num">33+</div><div class="label">módulos construidos en producción</div></div><div class="stat"><div class="num">01</div><div class="label">metodología propia: DEVGEP+</div></div><div class="stat"><div class="num">6+</div><div class="label">productos en portafolio</div></div></div>
     </div>
   </div>
 </section>
 
 <section class="on-dark" id="metodo">
   <div class="wrap method-wrap">
-    <div>
-      <div class="eyebrow">El método</div>
-      <h2 style="font-size:30px;font-weight:600;margin-bottom:14px;">DEVGEP+: el plano antes que el código</h2>
-      <p class="method-intro">Cada proyecto pasa por las mismas etapas, con las mismas reglas. No improvisamos versiones, no tocamos producción sin verificación, y cada decisión técnica queda documentada para quien venga después.</p>
-    </div>
-    <div class="schema">
-      <div class="schema-row">
-        <div class="node"><div class="dot"></div><div class="name">Arquitectura</div><div class="desc">Definimos stack, módulos y reglas antes de escribir una línea.</div></div>
-        <div class="node"><div class="dot"></div><div class="name">Construcción</div><div class="desc">Desarrollo incremental, un cambio a la vez, con control de versión estricto.</div></div>
-        <div class="node"><div class="dot"></div><div class="name">Verificación</div><div class="desc">QA por rol y por caso de uso real antes de cada entrega.</div></div>
-        <div class="node"><div class="dot"></div><div class="name">Despliegue</div><div class="desc">Salida a producción documentada, sin sorpresas ni improvisación.</div></div>
-        <div class="node"><div class="dot"></div><div class="name">Soporte</div><div class="desc">El proyecto sigue vivo: monitoreo, mejoras y evolución continua.</div></div>
-      </div>
-    </div>
+    <div><div class="eyebrow">El método</div><h2 style="font-size:clamp(28px,3.5vw,40px);font-weight:600;margin-bottom:14px;">DEVGEP+: el plano antes que el código</h2><p class="method-intro">Cada proyecto pasa por las mismas etapas, con las mismas reglas: arquitectura, construcción incremental, verificación, despliegue y soporte. Así reducimos improvisación y aumentamos trazabilidad.</p></div>
+    <div class="schema"><div class="schema-row"><div class="node"><div class="dot"></div><div class="name">Arquitectura</div><div class="desc">Stack, módulos, permisos, datos y reglas antes de construir.</div></div><div class="node"><div class="dot"></div><div class="name">Construcción</div><div class="desc">Cambios incrementales, versionados y verificables.</div></div><div class="node"><div class="dot"></div><div class="name">Verificación</div><div class="desc">QA por rol, flujo y caso de uso real.</div></div><div class="node"><div class="dot"></div><div class="name">Despliegue</div><div class="desc">Salida a producción documentada y controlada.</div></div><div class="node"><div class="dot"></div><div class="name">Soporte</div><div class="desc">Evolución continua, mejoras y monitoreo.</div></div></div></div>
   </div>
 </section>
 
 <section id="shepherd">
   <div class="wrap">
-    <div class="eyebrow">Producto insignia</div>
-    <div class="section-head">
-      <h2>Shepherd-BI: la prueba de que el método funciona</h2>
-      <div class="note">Cada regla de DEVGEP+ se forjó construyendo este producto, en producción real.</div>
-    </div>
-    <div class="flagship">
-      <div class="flagship-copy">
-        <span class="tag">SaaS · EN PRODUCCIÓN</span>
-        <h3>Inteligencia pastoral para iglesias hispanas</h3>
-        <p>Una plataforma que ayuda a iglesias a entender y gestionar su comunidad con datos, no solo con donaciones: reportes automáticos de inteligencia, formación, calendario pastoral, archivo de servicios y más, todo en un solo lugar.</p>
-        <p>Compite directamente contra software de gestión eclesiástica de EE.UU. (Planning Center, Breeze, Realm) liderando con inteligencia en lugar de solo administración de donativos.</p>
-        <div class="stack-tags">
-          <span>Next.js 14</span><span>NestJS</span><span>PostgreSQL</span><span>Prisma</span><span>Redis</span><span>BullMQ</span><span>Vercel</span><span>Render</span>
-        </div>
-        <a href="https://shepherdbi-web.vercel.app/" target="_blank" rel="noopener" class="demo-link">Ver demo en vivo →</a>
-      </div>
-      <div class="flagship-stats">
-        <div><div class="fnum">33+</div><div class="flabel">módulos en producción</div></div>
-        <div><div class="fnum">70+</div><div class="flabel">sesiones de desarrollo</div></div>
-        <div><div class="fnum">7</div><div class="flabel">roles con permisos diferenciados</div></div>
-        <div><div class="fnum">3</div><div class="flabel">idiomas soportados (ES / EN / PT)</div></div>
-      </div>
-    </div>
+    <div class="eyebrow">Producto insignia</div><div class="section-head"><h2>Shepherd-BI: la prueba de que el método funciona</h2><div class="note">Un SaaS real en producción, construido bajo DEVGEP+.</div></div>
+    <div class="flagship"><div class="flagship-copy"><span class="tag">SaaS · En producción</span><h3>Inteligencia pastoral para iglesias hispanas</h3><p>Una plataforma que ayuda a iglesias a gestionar comunidad, formación, calendario pastoral, archivos, reportes e inteligencia operativa en un solo lugar.</p><p>Compite contra herramientas de gestión eclesiástica de EE.UU. liderando con datos, seguimiento e inteligencia, no solo con administración de donativos.</p><div class="stack-tags"><span>Next.js 14</span><span>NestJS</span><span>PostgreSQL</span><span>Prisma</span><span>Redis</span><span>BullMQ</span><span>Vercel</span><span>Render</span></div><a href="https://shepherdbi-web.vercel.app/" target="_blank" rel="noopener" class="demo-link">Ver demo en vivo →</a></div><div class="flagship-stats"><div><div class="fnum">33+</div><div class="flabel">módulos en producción</div></div><div><div class="fnum">70+</div><div class="flabel">sesiones documentadas</div></div><div><div class="fnum">7</div><div class="flabel">roles diferenciados</div></div><div><div class="fnum">3</div><div class="flabel">idiomas: ES / EN / PT</div></div></div></div>
   </div>
 </section>
 
 <section id="portafolio">
-  <div class="wrap">
-    <div class="eyebrow">Portafolio</div>
-    <div class="section-head">
-      <h2>Productos que ya construimos</h2>
-      <div class="note">No partimos de cero: cada propuesta nueva se apoya en productos reales, ya construidos y operando.</div>
-    </div>
+  <div class="wrap"><div class="eyebrow">Portafolio</div><div class="section-head"><h2>Productos que muestran nuestra capacidad real.</h2><div class="note">Cada propuesta nueva se apoya en experiencia construida, no en promesas vacías.</div></div>
     <div class="pf-grid">
-      <div class="pf-card">
-        <span class="crop tl"></span><span class="crop br"></span>
-        <span class="flag">★ INSIGNIA</span>
-        <span class="seg">SaaS · Iglesias</span>
-        <h4>Shepherd-BI</h4>
-        <p>Plataforma de inteligencia y gestión pastoral para iglesias hispanas, con 33+ módulos en producción.</p>
-        <a href="https://shepherdbi-web.vercel.app/" target="_blank" rel="noopener" class="card-link">Ver en vivo →</a>
-      </div>
-      <div class="pf-card">
-        <span class="crop tl"></span><span class="crop br"></span>
-        <span class="seg">Plataforma a medida</span>
-        <h4>BIC Platform</h4>
-        <p>Sistema de programación de citas para una agencia de interpretación en EE.UU., con portales para Admin, Cliente e Intérprete.</p>
-      </div>
-      <div class="pf-card">
-        <span class="crop tl"></span><span class="crop br"></span>
-        <span class="seg">Fintech</span>
-        <h4>KikiPay</h4>
-        <p>Solución de pagos digitales pensada para el mercado dominicano.</p>
-      </div>
-      <div class="pf-card">
-        <span class="crop tl"></span><span class="crop br"></span>
-        <span class="seg">Eventos</span>
-        <h4>TicketsTime</h4>
-        <p>Plataforma de venta y gestión de tickets para eventos.</p>
-      </div>
-      <div class="pf-card">
-        <span class="crop tl"></span><span class="crop br"></span>
-        <span class="seg">Turismo</span>
-        <h4>AlojaBi</h4>
-        <p>Plataforma de alojamiento y reservas para el sector turístico.</p>
-      </div>
-      <div class="pf-card">
-        <span class="crop tl"></span><span class="crop br"></span>
-        <span class="seg">Core / Operaciones</span>
-        <h4>ORBITA</h4>
-        <p>Plataforma core para la gestión y el control de operaciones digitales.</p>
-      </div>
+      <div class="pf-card"><span class="flag">★ INSIGNIA</span><span class="seg">SaaS · Iglesias</span><h4>Shepherd-BI</h4><p>Gestión e inteligencia pastoral con módulos, roles, reportes, formación y operación multi-idioma.</p><div class="mini">Estado: producción</div><a href="https://shepherdbi-web.vercel.app/" target="_blank" rel="noopener" class="card-link">Ver en vivo →</a></div>
+      <div class="pf-card"><span class="seg">Plataforma a medida</span><h4>BIC Platform</h4><p>Programación de citas para agencia de interpretación en EE.UU., con portales Admin, Cliente e Intérprete.</p><div class="mini">Estado: demo + documentación</div></div>
+      <div class="pf-card"><span class="seg">Fintech</span><h4>KikiPay</h4><p>Pagos digitales, wallet, QR y arquitectura orientada al mercado dominicano.</p><div class="mini">Estado: MVP técnico</div></div>
+      <div class="pf-card"><span class="seg">Eventos</span><h4>TicketsTime</h4><p>Ticketing digital con órdenes, tickets, pagos, check-in y base para control de acceso por QR.</p><div class="mini">Estado: reconstrucción 2026</div></div>
+      <div class="pf-card"><span class="seg">Turismo</span><h4>AlojaBI</h4><p>Reservas, alojamiento, CRM, channel manager y analítica para el sector turístico.</p><div class="mini">Estado: concepto avanzado</div></div>
+      <div class="pf-card"><span class="seg">Operaciones</span><h4>ORBITA</h4><p>Core operativo para inteligencia comercial, rutas, territorios, GPS y control de campo.</p><div class="mini">Estado: arquitectura producto</div></div>
     </div>
   </div>
 </section>
 
 <section id="caso">
+  <div class="wrap"><div class="eyebrow">Caso de éxito</div><div class="case"><div class="case-copy"><h2 style="font-size:clamp(28px,3vw,38px);margin-bottom:16px;">Bright Interpreting Connect (EE.UU.)</h2><p>Una agencia de interpretación necesitaba reemplazar su programación manual de citas por una plataforma propia. Entregamos propuesta comercial, contrato bilingüe, requerimientos y una demo funcional desplegada.</p><ul class="case-list"><li>Digitalización de un proceso manual de agendamiento.</li><li>Tres portales con permisos diferenciados: Admin, Cliente e Intérprete.</li><li>Documentación comercial y técnica entregada junto al producto.</li><li>Demo funcional disponible para revisión y venta.</li></ul></div><div class="case-panel"><div class="role"><span>Antes</span><span>Programación manual</span></div><div class="role"><span>Después</span><span>Plataforma propia</span></div><div class="role"><span>Portales</span><span>Admin / Cliente / Intérprete</span></div><div class="role"><span>Stack</span><span>Next.js</span></div><div class="role"><span>Entrega</span><span>Demo + propuesta + contrato</span></div></div></div></div>
+</section>
+
+<section id="liderazgo">
   <div class="wrap">
-    <div class="eyebrow">Caso de éxito</div>
-    <div class="case">
-      <div class="case-copy">
-        <h2 style="font-size:28px;margin-bottom:16px;">Bright Interpreting Connect (EE.UU.)</h2>
-        <p>Una agencia de interpretación en Estados Unidos necesitaba reemplazar su programación manual de citas por una plataforma propia. Entregamos el paquete completo: propuesta comercial, contrato bilingüe, documentación de requerimientos y una plataforma funcional desplegada.</p>
-        <ul class="case-list">
-          <li>Tres portales con permisos diferenciados: Admin, Cliente e Intérprete.</li>
-          <li>Demo funcional desplegada y disponible para revisión en vivo.</li>
-          <li>Documentación comercial y técnica entregada junto al producto.</li>
-        </ul>
+    <div class="eyebrow">Liderazgo</div>
+
+    <div class="section-head">
+      <h2>StarBound tiene rostro, método y una historia detrás: construir tecnología que resuelva problemas reales, no solo entregar código.</h2>
+      <div class="note">Conoce al CEO, fundador y arquitecto principal detrás de la visión tecnológica de StarBound.</div>
+    </div>
+
+    <div class="leadership-card">
+      <div class="leader-left">
+        <h3>Guillermo Estefán Puello</h3>
+        <p>CEO & Founder · Arquitecto de Producto · Analista BI Sr. · Ingeniero de Software</p>
+
+        <div class="leader-pills">
+          <span>Software</span><span>IA</span><span>BI</span><span>DevOps</span><span>DEVGEP+</span>
+        </div>
+
+        <p style="margin-top:22px;">
+          <a href="https://guillermoestefanpuello.github.io/" target="_blank" rel="noopener" class="demo-link">
+            Ver portafolio profesional →
+          </a>
+        </p>
       </div>
-      <div class="case-panel">
-        <div class="role"><span>Admin</span><span>Gestión total</span></div>
-        <div class="role"><span>Cliente</span><span>Solicita y da seguimiento</span></div>
-        <div class="role"><span>Intérprete</span><span>Disponibilidad y citas</span></div>
-        <div class="role"><span>Stack</span><span>Next.js</span></div>
-        <div class="role"><span>Entrega</span><span>Demo + propuesta + contrato</span></div>
+
+      <div class="leader-right">
+        <p>StarBound nace de una convicción sencilla: las empresas no necesitan más tecnología decorativa; necesitan sistemas que les den control, velocidad, datos y capacidad real de crecimiento.</p>
+
+        <p style="margin-top:14px;">Desde la visión de su CEO, Guillermo Estefán Puello, cada proyecto se trabaja como un producto serio: con arquitectura, planificación, documentación, control de cambios, criterios de entrega y visión de negocio.</p>
+
+        <p style="margin-top:14px;">La meta no es solo construir software. Es transformar problemas operativos en plataformas medibles, escalables y sostenibles.</p>
       </div>
     </div>
   </div>
 </section>
 
 <section class="contact" id="contacto">
-  <div class="wrap">
-    <div class="eyebrow">Hablemos</div>
-    <h2>¿Listo para construir tu próximo producto con nosotros?</h2>
-    <p class="lede">Cuéntanos qué necesitas y te respondemos con una propuesta clara, basada en lo que ya hemos construido — no en promesas vacías.</p>
-    <a href="mailto:info@corp-starbound.com" class="btn-primary">Escríbenos →</a>
-    <div class="contact-grid">
-      <div class="contact-item"><div class="k">Email</div><div class="v">info@corp-starbound.com</div></div>
-      <div class="contact-item"><div class="k">Email (opcional)</div><div class="v">guillermo.e.puello@gmail.com</div></div>
-      <div class="contact-item"><div class="k">Sitio</div><div class="v"><a href="https://corp-starbound.com" target="_blank" rel="noopener">corp-starbound.com</a></div></div>
-      <div class="contact-item"><div class="k">RNC</div><div class="v">133-366-525</div></div>
-    </div>
-    <div class="social-row">
-      <a href="https://www.instagram.com/starbound_rd?igsh=M2d2NnJhMWJ2b2hj&utm_source=qr" target="_blank" rel="noopener">Instagram</a>
-      <a href="https://facebook.com/share/1ApAhGDnEi/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a>
-      <a href="https://linkedin.com/company/80786313" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://x.com/starbound_do?s=21" target="_blank" rel="noopener">X</a>
-      <a href="https://tiktok.com/@starbound_rd" target="_blank" rel="noopener">TikTok</a>
-      <a href="https://wa.me/message/APPGSFUH7V3GF1" target="_blank" rel="noopener">WhatsApp</a>
-    </div>
-  </div>
+  <div class="wrap"><div class="eyebrow">Hablemos</div><h2>¿Qué producto, sistema o automatización necesita construir tu empresa?</h2><p class="lede">Cuéntanos qué necesitas y te respondemos con una propuesta clara, basada en método, alcance y entregables concretos.</p><a href="https://wa.me/message/APPGSFUH7V3GF1" target="_blank" rel="noopener" class="btn-primary">Escríbenos por WhatsApp →</a><div class="contact-grid"><div class="contact-item"><div class="k">Email</div><div class="v">info@corp-starbound.com</div></div><div class="contact-item"><div class="k">Email directo</div><div class="v">guillermo.e.puello@gmail.com</div></div><div class="contact-item"><div class="k">Sitio</div><div class="v"><a href="https://corp-starbound.com" target="_blank" rel="noopener">corp-starbound.com</a></div></div><div class="contact-item"><div class="k">RNC</div><div class="v">133-366-525</div></div></div><div class="social-row"><a href="https://www.instagram.com/starbound_rd?igsh=M2d2NnJhMWJ2b2hj&utm_source=qr" target="_blank" rel="noopener">Instagram</a><a href="https://facebook.com/share/1ApAhGDnEi/?mibextid=wwXIfr" target="_blank" rel="noopener">Facebook</a><a href="https://linkedin.com/company/80786313" target="_blank" rel="noopener">LinkedIn</a><a href="https://x.com/starbound_do?s=21" target="_blank" rel="noopener">X</a><a href="https://tiktok.com/@starbound_rd" target="_blank" rel="noopener">TikTok</a><a href="https://wa.me/message/APPGSFUH7V3GF1" target="_blank" rel="noopener">WhatsApp</a></div></div>
 </section>
-
-<footer>
-  <div class="wrap">
-    <span>© 2026 StarBound — Software House · <a href="https://corp-starbound.com" target="_blank" rel="noopener" style="color:inherit">corp-starbound.com</a></span>
-    <span>DEVGEP+ © método propio de desarrollo</span>
-  </div>
-</footer>
-
+<footer><div class="wrap"><span>© 2026 StarBound — Software House · <a href="https://corp-starbound.com" target="_blank" rel="noopener" style="color:inherit">corp-starbound.com</a></span><span>DEVGEP+ © método propio de desarrollo</span></div></footer>
 </body>
 </html>
